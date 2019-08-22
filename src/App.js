@@ -43,7 +43,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper" style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
+      >
         <div className="card">
           <WrapperComponent>
             <UserComponent users={this.state.users} color={this.state.color}></UserComponent>
@@ -57,7 +62,7 @@ class App extends Component {
           </WrapperComponent>
         </div>
 
-      </div>
+      </ div >
     )
   }
 

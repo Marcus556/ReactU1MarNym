@@ -15,7 +15,6 @@ function UserComponent(props) {
   return (
     
     <div>
-      <h2>UserComponent</h2>
       <ul style={{color: color}}>
         {userList}
       </ul>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './WrapperComponent.module.css'
+import styles from './WrapperComponent.module.css';
 
 class WrapperComponent extends Component {
   constructor(props) {
@@ -23,18 +23,18 @@ class WrapperComponent extends Component {
 
   renderCards = () => {
     if (this.state.showContent === true) {
-      return <div className="card" styleName="card">{this.props.children}</div>
+      return <div className="container">{this.props.children}</div>
     }
   }
 
 
   render() {
     return (
-      <div className="container">
-
-        {this.renderCards()}
-        <div className="toggleDiv">
-          <button onClick={this.toggleShowContent}>Toggle</button>
+      <div className={styles.wrapper}>
+        <div className={styles.card}>
+          {this.renderCards()}
+          <hr />
+          <button className={styles.toggleButton} onClick={this.toggleShowContent}>Toggle</button>
         </div>
       </div>
     )
