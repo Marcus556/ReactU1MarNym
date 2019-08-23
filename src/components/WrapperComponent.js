@@ -9,6 +9,7 @@ class WrapperComponent extends Component {
     }
   }
 
+  //setState på showContent till true eller false beroende på tidigare bool. true->false / false->true.
   toggleShowContent = () => {
     if (this.state.showContent === true) {
       this.setState({
@@ -21,6 +22,7 @@ class WrapperComponent extends Component {
     }
   }
 
+  //om showConent är true returneras en <div> med {this.props.children}, dvs children till komponenten i app.js.
   renderCards = () => {
     if (this.state.showContent === true) {
       return <div className="container">{this.props.children}</div>
@@ -31,10 +33,12 @@ class WrapperComponent extends Component {
   render() {
     return (
       <div className={styles.wrapper}>
-        <div className={styles.card}>
+        <div className={styles.cardHolder}>
           {this.renderCards()}
+
           <hr />
-          <button className={styles.toggleButton} onClick={this.toggleShowContent}>Toggle</button>
+          <button className="btn btn-info" onClick={this.toggleShowContent}>Toggle</button>
+
         </div>
       </div>
     )
